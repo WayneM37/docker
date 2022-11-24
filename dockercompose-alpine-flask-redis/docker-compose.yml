@@ -1,0 +1,8 @@
+version: "3"   #versionlara göre yazıyı yenilemek lazım. 
+services:      #container
+  web:         # container name bu app.py flask 
+    build: .   # nokta içinde bulunduğumuz klasordeki docker fili al image ı build et. dockerfile alt klasorde ise path yazılmalı
+    ports:     # port publising 5000 den yayın yap
+      - "5000:5000"   #sol taraf ec2 sağ taraf container
+  redis:        # ayrı bir container. 
+    image: "redis:alpine"    #bunu buradan çek hazır image.
